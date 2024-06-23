@@ -17,7 +17,7 @@ CMD="${INPUT_RUN/$'\n'/' && '}"
 if [ -z "$INPUT_KEY" ] # Password
 then
     echo "Using password"
-    sshpass -p $INPUT_PASS -e ssh -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
+    sshpass -p $INPUT_PASS ssh -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
 else
     echo "Password empty"
 fi
