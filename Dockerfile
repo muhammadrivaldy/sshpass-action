@@ -5,7 +5,9 @@ LABEL "com.github.actions.description"="SSHPASS Github Action"
 LABEL "com.github.actions.icon"="code"
 LABEL "com.github.actions.color"="black"
 
-RUN apk update && apk add sshpass
+RUN apk update
+RUN apk add --no-cache --upgrade bash
+RUN apk add --no-cache sshpass
 
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh

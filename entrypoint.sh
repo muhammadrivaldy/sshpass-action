@@ -19,23 +19,6 @@ then
     echo "Using password"
     export SSHPASS=$PASS
     sshpass -e ssh -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
-
-else # Private key
-    echo "Using private key"
-    pwd
-    mkdir "/root/.ssh"
-
-    echo "$INPUT_KEY" > "/root/.ssh/id_rsa"
-    chmod 400 "/root/.ssh/id_rsa"
-
-    echo "Host *" > "/root/.ssh/config"
-    echo "  AddKeysToAgent yes" >> "/root/.ssh/config"
-    echo "  IdentityFile /root/.ssh/id_rsa" >> "/root/.ssh/config"
-
-    cat "/root/.ssh/config"
-
-    ls -lha "/root/.ssh/"
-    sshpass ssh -v -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
 fi
 
 echo "#################################################"
