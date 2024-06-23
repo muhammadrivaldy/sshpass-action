@@ -1,0 +1,5 @@
+services:
+  sshpass:
+    container_name: sshpass
+    image: sshpass
+    command: sleep infinity
