@@ -5,8 +5,7 @@ inputs:
     required: true
   port:
     description: "SSHPASS port"
-    required: false
-    default: 22
+    required: true
   user:
     description: "SSHPASS username"
     required: true
@@ -20,14 +19,13 @@ inputs:
     description: "SSHPASS commands to run"
     required: true
 
-description: 'SSHPASS Github Action'
+description: "SSHPASS Github Action"
 branding:
   icon: dollar-sign
   color: gray-dark
-runs-on: ubuntu-18.04
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   env:
     HOST: ${{ inputs.host }}
     PORT: ${{ inputs.port }}
