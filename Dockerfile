@@ -1,4 +1,4 @@
-FROM golang:1.21-ubuntu
+FROM golang:1.21-alpine
 
 LABEL "com.github.actions.name"="SSHPASS Github Action"
 LABEL "com.github.actions.description"="SSHPASS Github Action"
