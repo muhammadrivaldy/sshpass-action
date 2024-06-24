@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 RUN apt-get update
 RUN apt-get upgrade
-RUN apt-get install sshpass
+RUN apt-get install sshpass -y whatever
 RUN snap install go --channel=1.21/stable --classic
 
 COPY entrypoint.sh /
