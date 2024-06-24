@@ -1,10 +1,5 @@
 FROM golang:1.21-alpine
 
-LABEL "com.github.actions.name"="SSHPASS Github Action"
-LABEL "com.github.actions.description"="SSHPASS Github Action"
-LABEL "com.github.actions.icon"="code"
-LABEL "com.github.actions.color"="black"
-
 RUN apk update
 RUN apk add --no-cache --upgrade bash
 RUN apk add --no-cache sshpass

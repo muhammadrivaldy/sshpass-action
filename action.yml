@@ -12,9 +12,6 @@ inputs:
   pass:
     description: "SSHPASS password"
     required: false
-  key:
-    description: "SSHPASS private key"
-    required: false
   run:
     description: "SSHPASS commands to run"
     required: true
@@ -31,5 +28,4 @@ runs:
     PORT: ${{ inputs.port }}
     USER: ${{ inputs.user }}
     PASS: ${{ inputs.pass }}
-    KEY: ${{ inputs.key }}
     RUN: ${{ inputs.run }}
