@@ -1,8 +1,9 @@
-FROM golang:1.21-alpine
+FROM ubuntu:latest
 
-RUN apk update
-RUN apk add --no-cache --upgrade bash
-RUN apk add --no-cache sshpass
+RUN sudo apt-get update
+RUN sudo apt-get upgrade
+RUN sudo apt-get sshpass
+RUN sudo snap install go --channel=1.21/stable --classic
 
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
